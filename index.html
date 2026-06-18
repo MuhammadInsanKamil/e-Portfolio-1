@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Muhammad Insan Kamil | E-Portfolio PPL PPG Informatika</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* === SEMUA KODE CSS YANG SUDAH BAIK TETAP PERTAHANKAN === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.35rem;
+            background: linear-gradient(135deg, #2c3e66, #1e2a48);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        .hero {
+            padding: 48px 0 32px 0;
+            background: linear-gradient(145deg, #f1f5f9 0%, #ffffff 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 2;
+        }
+
+        .hero-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #334155;
+            max-width: 550px;
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 60px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+        }
+
+        .profile-oval {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-oval-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+            border: 4px solid white;
+            background: #eef2ff;
+        }
+
+        .profile-tagline {
+            font-weight: 600;
+            color: #1e293b;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            padding: 56px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #1: auto-fit agar tidak ada ruang kosong ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .two-column-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eef2ff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-icon {
+            background: #eef2ff;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            color: #2563eb;
+            font-size: 1.4rem;
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #2: media-space tidak overflow ===== */
+        .media-space {
+            background: #f1f5f9;
+            border-radius: 20px;
+            margin: 20px 0 10px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #cbd5e1;
+            color: #475569;
+            font-size: 0.85rem;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 12px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #3: video responsif ===== */
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #4: aksesibilitas link ===== */
+        a:not(.btn-drive):not(.nav-links a) {
+            text-decoration: underline;
+        }
+        .btn-drive, .nav-links a {
+            text-decoration: none;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #3b82f6;
+            padding-left: 24px;
+            margin: 32px 0;
+            background: #f8fafd;
+            border-radius: 20px;
+            padding: 20px 28px;
+        }
+
+        .assessment-box {
+            background: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 16px 0;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 32px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 32px 0;
+            gap: 16px;
+        }
+
+        .timeline-node {
+            background: white;
+            border-radius: 32px;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+            border-top: 5px solid #3b82f6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-sm {
+            background: #f1f5f9;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #5: tabel rubrik bisa di-scroll ===== */
+        .rubric-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.85rem;
+            min-width: 600px;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .rubric-table th {
+            background: #eef2ff;
+        }
+
+        .glossary-box {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .glossary-box h4 {
+            margin-bottom: 12px;
+            color: #1e40af;
+        }
+
+        .btn-drive {
+            display: inline-block;
+            background: #2563eb;
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 8px;
+        }
+
+        .btn-drive:hover {
+            background: #1d4ed8;
+            transform: scale(1.02);
+        }
+
+        .btn-drive i {
+            margin-right: 6px;
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #6: layar sangat kecil ===== */
+        @media (max-width: 400px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .profile-oval-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .profile-oval-img {
+                width: 140px;
+                height: 140px;
+            }
+            .card-grid,
+            .two-column-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== PERBAIKAN RESPONSIVITAS #7: gambar responsif di dalam media-space ===== */
+        .media-space img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        /* Tetapi untuk gambar yang butuh object-fit cover (misal di kartu Paser) tetap gunakan inline style */
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="logo">e-Portfolio 1</div>
+            <div class="nav-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#profil">Profil</a>
+                <a href="#konteks">Analisis Artefak</a>
+                <a href="#penilaian">Penilaian</a>
+                <a href="#target">Refleksi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section id="beranda" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="hero-badge"><i class="fas fa-chalkboard-user"></i> Praktik Pengalaman Lapangan
+                        Terbimbing</span>
+                    <h1>Muhammad Insan Kamil</h1>
+                    <p>Mahasiswa PPG Informatika | Universitas Lambung Mangkurat | SMAN 1 Alalak</p>
+                    <div class="hero-stats">
+                        <div class="stat-item"><i class="fas fa-chart-line"></i> 100% ketuntasan Siklus 3</div>
+                        <div class="stat-item"><i class="fas fa-code"></i> PBL + Scratch | Pengkondisian</div>
+                    </div>
+                </div>
+                <div class="profile-oval">
+                    <img src="assets/foto_profil.png" alt="Foto Profil Muhammad Insan Kamil" class="profile-oval-img" loading="lazy">
+                    <div class="profile-tagline">
+                        <i class="fas fa-laptop-code"></i> #CalonGuruInformatika<br> Berpikir komputasional untuk
+                        merdeka belajar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- ========== PROFIL MAHASISWA ========== -->
+        <section id="profil" class="section">
+            <div class="card" style="margin-bottom: 32px;">
+                <div class="badge-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>Muhammad Insan Kamil — Mengakar di Paser</h3>
+                <p>Saya lahir dan besar di <strong>Kabupaten Paser, Kalimantan Timur</strong>, sebuah daerah yang
+                    kaya akan tradisi, bahasa daerah, dan kearifan lokal. Dari kecil saya tumbuh dalam lingkungan
+                    yang menjunjung tinggi gotong royong, yang kemudian membentuk karakter tekun dan kolaboratif
+                    dalam setiap langkah saya. Setelah menyelesaikan pendidikan S1 Informatika di Institut Teknologi
+                    Kalimantan, saya memantapkan hati untuk mengabdi di dunia pendidikan sebagai guru Informatika.
+                </p>
+            </div>
+
+            <h3 class="section-title" style="font-size: 1.5rem; margin-top: 40px;">🏞️ Keunikan Kabupaten Paser</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="media-space">
+                        <img src="assets/museum_sadurengas.JPG" alt="Museum Kerajaan Sadurengas"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" loading="lazy">
+                    </div>
+                    <h3>Kerajaan Sadurengas (Kesultanan Pasir)</h3>
+                    <p>Kesultanan Pasir berdiri pada abad ke-16 (sekitar tahun 1516 Masehi). Penguasa pertamanya
+                        adalah seorang ratu bernama Aji Putri Petong yang dinobatkan pada usia 22 tahun. Pusat
+                        kerajaan ini berada di tepi Sungai Kendilo, yang menjadi cikal bakal Kabupaten Paser saat
+                        ini.</p>
+                </div>
+
+                <div class="card">
+                    <div class="media-space">
+                        <img src="assets/goa_tengkorak.jpg" alt="Formasi batuan Goa Tengkorak Paser"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" loading="lazy">
+                    </div>
+                    <h3>Goa Tengkorak Paser</h3>
+                    <p>Situs Cagar Budaya yang terletak di tebing kapur Desa Kasungai, Kecamatan Batu Sopang,
+                        Kabupaten Paser. Penelitian dari Universitas Gadjah Mada (UGM) menemukan 35 tengkorak dan
+                        170 tulang belulang manusia di dalam goa. Temuan ini dikaitkan dengan masa Kerajaan
+                        Sadurengas.</p>
+                </div>
+
+                <div class="card">
+                    <div class="media-space">
+                        <img src="assets/gunung_embun.jpg" alt="Pemandangan matahari terbit dari Gunung Embun"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" loading="lazy">
+                    </div>
+                    <h3>Gunung Embun (Saing Boga)</h3>
+                    <p>Secara resmi bernama Gunung Boga, berlokasi di Desa Luan, Kecamatan Muara Samu, Kabupaten
+                        Paser. Gunung ini menduduki peringkat ketiga dari 10 nominasi Anugerah Pesona Indonesia
+                        (API) Award 2020 Kementerian Pariwisata untuk kategori Dataran Tinggi Terpopuler di
+                        Indonesia. Dikenal dengan julukan "Negeri di Atas Awan" karena pemandangan kabut tebal di
+                        pagi hari.</p>
+                </div>
+
+                <div class="card">
+                    <div class="media-space">
+                        <img src="assets/belian.jpg" alt="Ritual Belian Nondoi"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" loading="lazy">
+                    </div>
+                    <h3>Upacara Adat Belian</h3>
+                    <p>Ritual adat Suku Paser yang berfungsi sebagai pembersihan kampung (tolak bala) dan syukuran.
+                        Belian Nondoi adalah jenis Belian dengan tingkatan tertinggi yang telah dilakukan sejak masa
+                        Kesultanan Paser dan berlangsung selama 7 hingga 8 malam. Pemerintah Kabupaten Paser rutin
+                        menggelar Festival Belian Adat Paser Nondoi setiap tahun sebagai wujud pelestarian budaya
+                        dan promosi wisata.</p>
+                </div>
+
+                <div class="card">
+                    <div class="media-space">
+                        <img src="assets/penari_ronggeng.jpg" alt="Penari Ronggeng Paser"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" loading="lazy">
+                    </div>
+                    <h3>Tari Ronggeng Paser</h3>
+                    <p>Tarian tradisional yang awalnya bernama Ngarang (berarti "menari bersama"), merupakan
+                        ungkapan kegembiraan dan rasa syukur masyarakat usai panen padi. Perubahan nama menjadi
+                        Ronggeng Paser terjadi setelah masa kemerdekaan, dipengaruhi oleh interaksi perdagangan
+                        dengan saudagar dari Malaysia dan Singapura. Tarian ini diiringi musik gambus, gendang
+                        Paser, gong, dan gerincai.</p>
+                </div>
+
+                <div class="card">
+                    <div class="media-space">
+                        <img src="assets/lambang_paser.png" alt="Simbol filosofi Paser"
+                            style="width: 100%; height: 200px; object-fit: fill; border-radius: 16px;" loading="lazy">
+                    </div>
+                    <h3>Filosofi "Olo Manin Aso Buen Si Olo Ndo"</h3>
+                    <p>Semboyan resmi Kabupaten Paser dalam bahasa Paser yang berarti "Hari esok harus lebih baik
+                        dari hari sekarang". Maknanya adalah semangat untuk terus berinovasi dan memperjuangkan
+                        kehidupan yang lebih baik, namun tetap berpegang teguh pada akar budaya.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 56px;">
+                <div class="card">
+                    <div class="badge-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Inspirasi & Tujuan Menjadi Guru Profesional</h3>
+                    <p>Saya percaya salah satu cara menemukan kebahagiaan adalah dengan membantu orang lain. Setiap
+                        kali saya berbagi pengetahuan dan melihat seseorang yang awalnya bingung
+                        menjadi paham, saya merasakan kepuasan yang tidak bisa diukur dengan materi. Mengajar adalah
+                        cara saya untuk terus berbuat baik melalui ilmu yang saya miliki.</p>
+                    <div class="quote" style="margin-top: 24px;">
+                        <i class="fas fa-quote-left" style="margin-right: 8px; color:#3b82f6;"></i>
+                        "Bukan tentang menjadi guru yang hebat, tapi tentang menjadi seseorang yang bermanfaat. Jika
+                        ilmu yang saya bagi bisa bermanfaat untuk orang lain, itu sudah cukup."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTEKS PEMBELAJARAN -->
+        <section id="konteks" class="section">
+            <h2 class="section-title">📖 Konteks Pembelajaran & Istilah Teknis</h2>
+            <div class="card">
+                <p><strong>Lokasi & Kelas:</strong> Saya melaksanakan Praktik Pengalaman Lapangan (PPL) terbimbing
+                    di <strong>SMAN 1 Alalak</strong>, Kabupaten Barito Kuala, Kalimantan Selatan. Kelas yang
+                    menjadi subjek praktik adalah <strong>kelas XI</strong> semester genap tahun ajaran 2025/2026.
+                </p>
+                <p><strong>Mata Pelajaran & Materi:</strong> Mata pelajaran Informatika dengan capaian pembelajaran
+                    mencakup <strong>Berpikir Komputasional, Literasi Digital, Analisis Data, serta Algoritma dan
+                        Pemrograman</strong>. Pada saat saya melaksanakan kegiatan PPL, fokus materi berada pada
+                    <strong>Algoritma dan Pemrograman</strong>, dengan sub materi pokok <strong>Pengkondisian
+                        (Percabangan)</strong>
+                    menggunakan lingkungan pemrograman visual <strong>Scratch</strong>.
+                </p>
+                <div class="glossary-box">
+                    <h4><i class="fas fa-info-circle"></i> Definisi Teknis</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Scratch:</strong> Platform pemrograman visual berbasis blok yang dikembangkan
+                            MIT. Memungkinkan siswa membuat program dengan menyusun blok-blok perintah seperti
+                            puzzle, cocok untuk pemula.</li>
+                        <li><strong>Pengkondisian (Conditional / if-else):</strong> Struktur kontrol yang
+                            memungkinkan program mengambil keputusan berdasarkan suatu syarat. Jika syarat terpenuhi
+                            (true), maka blok perintah di dalamnya dijalankan.</li>
+                        <li><strong>If Paralel:</strong> Beberapa blok if yang ditulis terpisah, satu per satu.
+                            Komputer akan mengecek semua kondisi secara berurutan setiap saat, meskipun beberapa
+                            kondisi mungkin tidak relevan.</li>
+                        <li><strong>Nested If (If Bersarang):</strong> Struktur pengkondisian di mana satu blok if
+                            berada di dalam blok if atau else lainnya. Lebih efisien karena komputer hanya mengecek
+                            kondisi seperlunya (jika kondisi pertama sudah terpenuhi, kondisi lainnya tidak dicek).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <div style="background: #eef2ff; border-radius: 36px; padding: 24px; margin-top: 56px;">
+            <h3 style="text-align: center;"><i class="fas fa-timeline"></i> Alur Praktik Pembelajaran Terbimbing (3
+                Siklus)</h3>
+            <div class="timeline">
+                <div class="timeline-node"><i class="fas fa-chalkboard"></i><br /><strong>Siklus 1</strong><br />22
+                    April 2026<br />Kelas XI-6<br />Discovery Learning</div>
+                <div class="timeline-node"><i class="fas fa-flask"></i><br /><strong>Siklus 2</strong><br />29 & 30
+                    April 2026<br />Kelas XI-7<br />Uji awal + PBL if paralel</div>
+                <div class="timeline-node"><i class="fas fa-rocket"></i><br /><strong>Siklus 3</strong><br />6 Mei
+                    2026<br />Kelas XI-7<br />Nested if (PBL)</div>
+            </div>
+            <p style="text-align: center; margin-top: 12px; font-size: 0.85rem;">Data hasil belajar diambil dari
+                Siklus 2 (uji awal dan PBL if paralel) dan Siklus 3 (nested if).</p>
+        </div>
+
+        <!-- ARTEFAK -->
+        <section id="praktik" class="section">
+            <h2 class="section-title">📁 Artefak & Analisis Praktik Mengajar</h2>
+            <p style="margin-bottom: 24px;">Berikut adalah rubrik penilaian yang digunakan untuk menilai project
+                Scratch yang dikerjakan siswa pada Siklus 2 dan Siklus 3. Rubrik ini mengukur dua aspek: Logika
+                Pengkondisian dan Kesesuaian Output Visual, dengan skala 1–4. Data ketuntasan yang disajikan (7,69%
+                → 84,62% → 100%) diperoleh dari hasil penilaian menggunakan rubrik ini pada Siklus 2 dan Siklus 3.
+            </p>
+
+            <!-- RUBRIK (dengan wrapper untuk scroll horizontal) -->
+            <div class="assessment-box" style="background: #e6f0ff;">
+                <h3><i class="fas fa-table-list"></i> Rubrik Penilaian Produk (Project Scratch)</h3>
+                <p>Setiap project dinilai berdasarkan dua aspek dengan skala 1–4, kemudian dikonversi ke nilai
+                    0–100. KKM = 75. Rubrik ini digunakan pada Siklus 2 (uji kompetensi dan project PBL) dan Siklus
+                    3 (project nested if).</p>
+                <div class="rubric-table-wrapper">
+                    <table class="rubric-table">
+                        <thead>
+                            <tr>
+                                <th>Aspek</th>
+                                <th>Skor 4 (Sangat Baik)</th>
+                                <th>Skor 3 (Baik)</th>
+                                <th>Skor 2 (Cukup)</th>
+                                <th>Skor 1 (Perlu Bimbingan)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Logika Pengkondisian</strong></td>
+                                <td>Seluruh kondisi berfungsi benar, logika percabangan dan syarat jarak sesuai
+                                    (termasuk nested if)</td>
+                                <td>Seluruh kondisi berfungsi benar, tetapi ada kekurangan (misal: if paralel, belum
+                                    nested)</td>
+                                <td>Hanya sebagian kecil kondisi yang berfungsi benar; banyak kesalahan logika</td>
+                                <td>Tidak ada kondisi yang berfungsi atau tidak menggunakan pengkondisian</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kesesuaian Output Visual</strong></td>
+                                <td>Output sesuai sepenuhnya dengan visual contoh</td>
+                                <td>Sebagian besar output sesuai, 1–2 detail kecil kurang tepat</td>
+                                <td>Hanya sekitar setengah output sesuai; banyak ketidakcocokan</td>
+                                <td>Output tidak menyerupai contoh visual</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Rumus Nilai:</strong> (Skor Logika + Skor Kesesuaian Visual) × 100 / 8</p>
+            </div>
+
+            <!-- SIKLUS 1 -->
+            <div class="card" style="margin-bottom: 32px;">
+                <div class="flex-between">
+                    <h3><i class="fas fa-school"></i> Siklus 1 – Kelas XI-6 (22 April 2026)</h3><span
+                        class="btn-sm">Discovery Learning</span>
+                </div>
+                <p><strong>Konteks:</strong> Mengajar di kelas XI-6 dengan materi pengantar variabel dan
+                    pengkondisian. Model yang digunakan adalah Discovery Learning. Pertemuan ini juga menjadi bahan
+                    monitoring Dosen Pembimbing Lapangan.</p>
+                <div class="media-space">
+                    <img src="assets/Tampilan Modul Siklus 1_page-0001.jpg"
+                        alt="Modul Ajar Siklus 1 (Discovery Learning)"
+                        style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                    <a href="https://drive.google.com/file/d/1nMXB68361DUdlUQyHW1RlHWMAO8AbsqD/view?usp=sharing"
+                        target="_blank" class="btn-drive"><i class="fas fa-external-link-alt"></i> Lihat
+                        Modul Ajar</a>
+                </div>
+                <div class="assessment-box"><i class="fas fa-clipboard-list"></i> <strong>Catatan DPL
+                        :</strong> Perangkat pembelajaran kurang lengkap, rumusan tujuan perlu kaidah
+                    ABCD, sintaks Discovery Learning belum maksimal. Tidak diawali/doa, K3 lab kurang, waktu belum
+                    ideal, refleksi perlu ditingkatkan. <strong>→ Refleksi saya:</strong> Masukan ini menjadi
+                    fondasi perbaikan menuju PBL terstruktur pada siklus berikutnya.</div>
+                <div class="assessment-box" style="margin-top: 16px;"><strong>📌 Analisis artefak (teori
+                        pedagogi):</strong> Discovery Learning menekankan observasi, namun tanpa masalah autentik
+                    siswa cenderung pasif. Kekurangan ini memicu migrasi ke PBL (Arends, 2012) yang lebih efektif
+                    untuk pemrograman. Kelemahan: asesmen produk kurang jelas, scaffolding minim. Keberhasilan:
+                    identifikasi titik awal kesulitan siswa.</div>
+            </div>
+
+            <!-- SIKLUS 2 -->
+            <div class="card" style="margin-bottom: 32px;">
+                <h3><i class="fas fa-clipboard-list"></i> Siklus 2 – Kelas XI-7 (29 & 30 April 2026)</h3>
+
+                <p><strong>29 April – Uji Kompetensi Awal (pra tindakan)</strong></p>
+                <p>Mekanisme:</p>
+                <ol style="margin-left: 20px; margin-bottom: 12px;">
+                    <li><strong>Soal visual:</strong> Guru menampilkan program Scratch yang sudah jadi (hanya
+                        tampilan, tanpa kode). Program tersebut menampilkan dua sprite yang berjalan berlawanan
+                        arah. Saat kedua sprite hampir bertabrakan, sprite pertama harus melompati sprite kedua.
+                    </li>
+                    <li><strong>Tugas siswa:</strong> Siswa membuat ulang program tersebut dari awal tanpa melihat
+                        kode. Mereka harus menambahkan logika pengkondisian (<code>if-else</code>) untuk mengatur
+                        kondisi tabrakan dan lompatan.</li>
+                    <li><strong>Penilaian:</strong> Menggunakan rubrik produk yang sama dengan Siklus 3 (<a
+                            href="#praktik" style="color: #2563eb; text-decoration: underline;">Lihat rubrik di
+                            atas</a>), yaitu dua aspek: Logika Pengkondisian dan Kesesuaian Output Visual, dengan
+                        skala 1–4.</li>
+                </ol>
+                <div class="media-space">
+                    <video controls style="width: 100%; border-radius: 16px; margin-bottom: 8px;"
+                        poster="assets/tumbnail_soal_visual_siklus1.png">
+                        <source src="assets/soal_visual_siklus1.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung pemutar video.
+                    </video>
+                    <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
+                        Video 1: Tampilan visual soal yang ditampilkan ke siswa (tanpa kode)</p>
+                    <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Contoh tampilan program yang
+                        harus dibuat ulang oleh siswa</span>
+                </div>
+
+                <p style="text-align: center;"><strong>Hasil:</strong> Ketuntasan hanya <strong>7,69%</strong> (1
+                    dari 13 siswa tuntas),
+                    rata-rata nilai 45,19. Hal ini menunjukkan pemahaman awal siswa terhadap <code>if-else</code>
+                    masih sangat rendah.</p>
+
+                <p style="font-size: 0.9rem; margin-top: 16px; color: #4b5563;">
+                    <i class="fas fa-file-code"></i> Berikut contoh hasil pekerjaan siswa pada uji kompetensi awal,
+                    yang menggambarkan variasi tingkat pemahaman siswa terhadap pengkondisian:
+                </p>
+
+                <!-- Contoh hasil kerja uji awal -->
+                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <img src="assets/uji kompetensi_kode siswa nilai rendah_sprite 1.png"
+                                        alt="Kode Sprite 1 siswa nilai rendah"
+                                        style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
+                                        loading="lazy">
+                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                        <i class="fas fa-info-circle"></i> Kode Sprite 1 - Siswa A
+                                    </span>
+                                </div>
+                                <div>
+                                    <img src="assets/uji kompetensi_kode siswa nilai rendah_sprite 2_modif.png"
+                                        alt="Kode Sprite 2 siswa nilai rendah"
+                                        style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
+                                        loading="lazy">
+                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                        <i class="fas fa-info-circle"></i> Kode Sprite 2 - Siswa A
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #dc2626; font-weight: 600; margin-bottom: 4px;">❌ Nilai Terendah —
+                                    Siswa A (25)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 1 (Tidak menggunakan pengkondisian)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 1 (Output tidak menyerupai visual contoh)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <img src="assets/uji kompetensi_kode siswa nilai sedang_sprite 1.png"
+                                        alt="Kode Sprite 1 siswa nilai sedang"
+                                        style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
+                                        loading="lazy">
+                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                        <i class="fas fa-info-circle"></i> Kode Sprite 1 - Siswa B
+                                    </span>
+                                </div>
+                                <div>
+                                    <img src="assets/uji kompetensi_kode siswa nilai sedang_sprite 2.png"
+                                        alt="Kode Sprite 2 siswa nilai sedang"
+                                        style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
+                                        loading="lazy">
+                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                        <i class="fas fa-info-circle"></i> Kode Sprite 2 - Siswa B
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #eab308; font-weight: 600; margin-bottom: 4px;">⚠️ Nilai Sedang —
+                                    Siswa B (50)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 1 (Tidak menggunakan pengkondisian)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (Sebagian besar output sesuai,
+                                        1–2 detail kurang tepat)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <img src="assets/uji kompetensi_kode siswa nilai tinggi_sprite 1.png"
+                                        alt="Kode Sprite 1 siswa nilai tinggi"
+                                        style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
+                                        loading="lazy">
+                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                        <i class="fas fa-info-circle"></i> Kode Sprite 1 - Siswa C
+                                    </span>
+                                </div>
+                                <div>
+                                    <img src="assets/uji kompetensi_kode siswa nilai tinggi_sprite 2.png"
+                                        alt="Kode Sprite 2 siswa nilai tinggi"
+                                        style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
+                                        loading="lazy">
+                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                        <i class="fas fa-info-circle"></i> Kode Sprite 2 - Siswa C
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #16a34a; font-weight: 600; margin-bottom: 4px;">✅ Nilai Tertinggi —
+                                    Siswa C (87,5)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan pengkondisian dengan benar)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (Sebagian besar output sesuai,
+                                        1–2 detail kurang tepat)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEKANISME PBL SIKLUS 2 PERTEMUAN 2 -->
+                <p style="margin-top: 20px;"><strong>30 April – PBL (if paralel)</strong></p>
+                <p><strong>Mekanisme:</strong></p>
+                <ol style="margin-left: 20px; margin-bottom: 12px;">
+                    <li><strong>Latihan (Project 1):</strong> Siswa memodifikasi kode awal yang memiliki dua kondisi
+                        berdasarkan jarak antara <code>mouse-pointer</code> (kursor) dan sprite:
+                        <ul style="margin-left: 20px; margin-top: 4px;">
+                            <li><strong>Kondisi awal 1:</strong> Jika jarak < 150, sprite mengatakan "Dekat!" </li>
+                            <li><strong>Kondisi awal 2:</strong> Jika jarak ≥ 150, sprite mengatakan "Jauh!"</li>
+                        </ul>
+                        Siswa ditantang untuk menambahkan satu kondisi baru: <strong>"Dekat Banget!"</strong> jika
+                        jarak < 50. Tujuan latihan ini adalah mengenalkan siswa pada struktur pengkondisian <code>
+                            if-else</code> dan cara menambahkan kondisi baru dengan blok <code>if</code> di Scratch.
+                    </li>
+                    <li><strong>Tugas mandiri (Project 2):</strong> Siswa membuat ulang program tiga
+                        kondisi dari tampilan visual yang ditampilkan guru tanpa diberikan kode.
+                        <br>
+                        <span style="font-size: 0.9rem; color: #4b5563; display: block; margin-top: 6px;">
+                            <i class="fas fa-eye"></i> Berikut visual yang ditampilkan guru:
+                        </span>
+                        <div class="media-space" style="margin-top: 8px;">
+                            <video controls style="width: 100%; border-radius: 16px; margin-bottom: 8px;"
+                                poster="assets/tumbnail_soal_visual_siklus2.png">
+                                <source src="assets/soal_visual_siklus2.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung pemutar video.
+                            </video>
+                            <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
+                                Visual program tiga kondisi yang harus dibuat ulang oleh siswa (tanpa kode)</p>
+                            <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Siswa harus membuat
+                                kode agar outputnya serupa dengan program yang ditampilkan guru</span>
+                        </div>
+                        <br>
+                        Spesifikasi program (berdasarkan jarak kursor terhadap sprite):
+                        <ul style="margin-left: 20px; margin-top: 4px;">
+                            <li><strong>Kondisi 1:</strong> Jarak kursor < 50 → sprite mengatakan "Ada Penyusup!" +
+                                    backdrop <em>Castle 1</em></li>
+                            <li><strong>Kondisi 2:</strong> 50 ≤ Jarak kursor < 150 → sprite mengatakan "Siapa itu?"
+                                    (backdrop tetap)</li>
+                            <li><strong>Kondisi 3:</strong> Jarak kursor ≥ 150 → sprite mengatakan "Situasi Aman" +
+                                backdrop <em>Castle 3</em></li>
+                        </ul>
+                        Dalam Scratch, siswa menggunakan blok <code>if</code> dengan operator perbandingan dan
+                        blok <code>distance to mouse-pointer</code> untuk mengecek jarak tersebut.
+                    </li>
+                    <li><strong>Penilaian:</strong> Menggunakan rubrik yang sama dengan Siklus 3 (<a href="#praktik"
+                            style="color: #2563eb; text-decoration: underline;">lihat rubrik di atas</a>). Project 2
+                        dinilai berdasarkan dua aspek: Logika Pengkondisian dan Kesesuaian Output Visual.</li>
+                </ol>
+
+                <p style="font-size: 0.9rem; margin-top: 16px; color: #4b5563;">
+                    <i class="fas fa-file-code"></i> Berikut contoh hasil pekerjaan siswa pada Project 2 (Siklus 2,
+                    if paralel):
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div>
+                                <img src="assets/siklus 2_kode siswa nilai rendah.png"
+                                    alt="Kode siswa nilai rendah Project 2 Siklus 2"
+                                    style="width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+                                <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <i class="fas fa-info-circle"></i> Kode Project 2 - Siswa D
+                                </span>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #dc2626; font-weight: 600; margin-bottom: 4px;">❌ Nilai Terendah —
+                                    Siswa D (50)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 2 (Hanya sebagian kondisi yang berfungsi)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 2 (Hanya sekitar setengah output sesuai)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div>
+                                <img src="assets/siklus 2_kode siswa nilai sedang.png"
+                                    alt="Kode siswa nilai sedang Project 2 Siklus 2"
+                                    style="width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+                                <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <i class="fas fa-info-circle"></i> Kode Project 2 - Siswa E
+                                </span>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #eab308; font-weight: 600; margin-bottom: 4px;">⚠️ Nilai Sedang —
+                                    Siswa E (75)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 3 (Seluruh kondisi berfungsi, tapi if paralel)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, backdrop tidak berubah sesuai spesifikasi)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div>
+                                <img src="assets/siklus 2_kode siswa nilai tinggi.png"
+                                    alt="Kode siswa nilai tinggi Project 2 Siklus 2"
+                                    style="width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+                                <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <i class="fas fa-info-circle"></i> Kode Project 2 - Siswa F
+                                </span>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #16a34a; font-weight: 600; margin-bottom: 4px;">✅ Nilai Tertinggi —
+                                    Siswa F (87,5)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 3 (Tiga kondisi berfungsi benar, if paralel)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 4 (Output sesuai sepenuhnya)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-space" style="margin-top: 16px;">
+                    <img src="assets/Tampilan Modul Ajar Siklus 2_page-0001.jpg"
+                        alt="LKPD dan contoh kode tiga if paralel siswa"
+                        style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                    <a href="https://drive.google.com/file/d/1BQgacQ-ldWSmvMqLAIXMQAstP8HM_drP/view?usp=sharing"
+                        target="_blank" class="btn-drive">
+                        <i class="fas fa-external-link-alt"></i> Lihat Modul Ajar Siklus 2
+                    </a>
+                </div>
+
+                <p><strong>Hasil:</strong> Ketuntasan meningkat menjadi <strong>84,62%</strong> (11 dari 13 siswa
+                    tuntas), rata-rata nilai 78,85. Seluruh siswa yang tuntas berhasil membuat program tiga kondisi
+                    dengan benar, namun <strong>semuanya masih menggunakan tiga blok <code>if</code>
+                        terpisah</strong> (if paralel) — belum ada yang menerapkan struktur <code>nested if</code>.
+                </p>
+
+                <div class="assessment-box">
+                    <strong>Analisis:</strong> PBL meningkatkan keterlibatan dan hasil belajar secara drastis
+                    dibandingkan uji kompetensi awal. Namun, seluruh siswa masih menggunakan if paralel yang kurang
+                    efisien karena komputer harus mengecek semua kondisi setiap saat. Temuan ini menjadi dasar
+                    perbaikan pada Siklus 3, di mana siswa akan diperkenalkan dengan <strong>nested if</strong>
+                    (pengkondisian bersarang) untuk membuat program yang lebih efisien.
+                </div>
+            </div>
+
+            <!-- SIKLUS 3 -->
+            <div class="card" style="margin-bottom: 32px;">
+                <h3><i class="fas fa-rocket"></i> Siklus 3 – Nested If (6 Mei 2026, Kelas XI-7)</h3>
+                <p><strong>Mekanisme:</strong> Fokus pada <strong>nested if (if bersarang)</strong>.</p>
+                <ol style="margin-left: 20px; margin-bottom: 12px;">
+                    <li><strong>Latihan (Project 1):</strong> Siswa mengonversi kode tiga
+                        kondisi if paralel (dari Siklus 2) menjadi struktur nested if. Tujuan latihan ini adalah
+                        mengenalkan efisiensi komputasi dengan mengurangi jumlah pengecekan kondisi.</li>
+                    <li><strong>Tugas mandiri (Project 2):</strong> Siswa membuat program baru dengan sprite
+                        <strong>Referee</strong> dari tampilan visual yang ditampilkan guru tanpa diberikan kode.
+                        Disarankan menggunakan nested if (satu blok <code>if-else</code> utama, dengan <code>if</code>
+                        di dalamnya).
+                        <br>
+                        <span style="font-size: 0.9rem; color: #4b5563; display: block; margin-top: 6px;">
+                            <i class="fas fa-eye"></i> Berikut visual yang ditampilkan guru:
+                        </span>
+                        <div class="media-space" style="margin-top: 8px;">
+                            <video controls style="width: 100%; border-radius: 16px; margin-bottom: 8px;"
+                                poster="assets/tumbnail_soal_visual_siklus3.png">
+                                <source src="assets/soal_visual_siklus3.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung pemutar video.
+                            </video>
+                            <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
+                                Visual program Referee tiga kondisi yang harus dibuat ulang oleh siswa (tanpa kode)</p>
+                            <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Siswa harus membuat kode
+                                agar outputnya serupa dengan program yang ditampilkan guru</span>
+                        </div>
+                        <br>
+                        Spesifikasi program (berdasarkan jarak kursor terhadap sprite Referee):
+                        <ul style="margin-left: 20px; margin-top: 4px;">
+                            <li><strong>Kondisi 1:</strong> Jarak kursor < 50 → sprite mengatakan "Pelanggaran!" +
+                                    kostum <em>referee-a</em></li>
+                            <li><strong>Kondisi 2:</strong> 50 ≤ Jarak kursor < 150 → sprite
+                                    mengatakan "Jangan Mendekat!" + kostum <em>referee-c</em></li>
+                            <li><strong>Kondisi 3:</strong> Jarak kursor ≥ 150 → sprite mengatakan "Tetap Disana!" +
+                                kostum <em>referee-d</em></li>
+                        </ul>
+                        Dalam Scratch, siswa menggunakan blok <code>if-else</code> bersarang dan blok
+                        <code>distance to mouse-pointer</code> untuk mengecek jarak secara bertingkat.
+                    </li>
+                    <li><strong>Penilaian:</strong> Menggunakan rubrik yang sama dengan Siklus 2 (<a href="#praktik"
+                            style="color: #2563eb; text-decoration: underline;">lihat rubrik di atas</a>). Project 2
+                        dinilai berdasarkan dua aspek: Logika Pengkondisian dan Kesesuaian Output Visual. Skor maksimal
+                        4 diberikan jika siswa berhasil menerapkan nested if.</li>
+                </ol>
+
+                <p style="font-size: 0.9rem; margin-top: 16px; color: #4b5563;">
+                    <i class="fas fa-file-code"></i> Berikut contoh hasil pekerjaan siswa pada Project 2 (Siklus 3,
+                    nested if):
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div>
+                                <img src="assets/siklus 3_kode siswa nilai rendah.png"
+                                    alt="Kode siswa nilai rendah Project 2 Siklus 3"
+                                    style="width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+                                <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <i class="fas fa-info-circle"></i> Kode Project 2 - Siswa G
+                                </span>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #dc2626; font-weight: 600; margin-bottom: 4px;">❌ Nilai Terendah —
+                                    Siswa G (75)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 3 (Tiga kondisi berfungsi benar, tapi masih menggunakan if paralel)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, perubahan kostum dari sprite seharusnya berbeda di setiap kondisi)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div>
+                                <img src="assets/siklus 3_kode siswa nilai sedang.png"
+                                    alt="Kode siswa nilai sedang Project 2 Siklus 3"
+                                    style="width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+                                <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <i class="fas fa-info-circle"></i> Kode Project 2 - Siswa H
+                                </span>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #eab308; font-weight: 600; margin-bottom: 4px;">⚠️ Nilai Sedang —
+                                    Siswa H (87,5)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan nested if dengan benar)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, tiap kondisi tidak disertai perubahan kostum dari sprite)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; max-width: 400px;">
+                        <div class="media-space" style="min-height: 100px; padding: 8px;">
+                            <div>
+                                <img src="assets/siklus 3_kode siswa nilai tinggi.png"
+                                    alt="Kode siswa nilai tinggi Project 2 Siklus 3"
+                                    style="width: 100%; height: auto; border-radius: 12px;" loading="lazy">
+                                <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <i class="fas fa-info-circle"></i> Kode Project 2 - Siswa I
+                                </span>
+                            </div>
+                            <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
+                                <p style="color: #16a34a; font-weight: 600; margin-bottom: 4px;">✅ Nilai Tertinggi —
+                                    Siswa I (100)</p>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan nested if dengan sempurna)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 4 (Output sesuai sepenuhnya)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-space" style="margin-top: 16px;">
+                    <img src="assets/Tampilan Modul Ajar Siklus 3_page-0001.jpg"
+                        alt="LKPD dan contoh kode nested if siswa"
+                        style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                    <a href="https://drive.google.com/file/d/1QHfDSnVYBDAGRz79XkeKUmDEttTcwDKH/view?usp=sharing"
+                        target="_blank" class="btn-drive">
+                        <i class="fas fa-external-link-alt"></i> Lihat Modul Ajar Siklus 3
+                    </a>
+                </div>
+
+                <p><strong>Hasil:</strong> Ketuntasan mencapai <strong>100%</strong> (13 dari 13 siswa tuntas),
+                    rata-rata nilai = 84,62. Sebagian besar siswa memperoleh skor logika 4 karena berhasil menerapkan
+                    nested if,
+                    yang menunjukkan pemahaman akan efisiensi komputasi.</p>
+
+                <div class="assessment-box"><strong>Refleksi keberhasilan:</strong> Perbandingan langsung if paralel
+                    vs nested if membuat siswa memahami bahwa program dapat bekerja lebih efisien (lebih sedikit
+                    pengecekan kondisi). PBL fase analisis mendorong refleksi kritis.</div>
+            </div>
+
+            <!-- PERBANDINGAN HASIL -->
+            <div style="margin-top: 40px; background: #f8fafc; border-radius: 24px; padding: 20px;">
+                <h3>📊 Perbandingan Hasil Belajar (13 siswa)</h3>
+                <p style="font-size: 0.9rem; color: #4b5563; margin-bottom: 12px;">
+                    Tabel di bawah ini menunjukkan peningkatan rata-rata nilai dan persentase ketuntasan siswa
+                    dari uji kompetensi awal hingga Siklus 3 setelah penerapan model PBL berbantuan Scratch.
+                </p>
+                <div class="rubric-table-wrapper">
+                    <table class="rubric-table">
+                        <thead>
+                            <tr>
+                                <th>Siklus / Pertemuan</th>
+                                <th>Rata-rata Nilai</th>
+                                <th>Ketuntasan Klasikal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Siklus 2 (Uji awal, 29 April)</td>
+                                <td>45,19</td>
+                                <td>7,69% (1 siswa)</td>
+                            </tr>
+                            <tr>
+                                <td>Siklus 2 (PBL if paralel, 30 April)</td>
+                                <td>78,85</td>
+                                <td>84,62% (11 siswa)</td>
+                            </tr>
+                            <tr>
+                                <td>Siklus 3 (Nested if, 6 Mei)</td>
+                                <td>84,62</td>
+                                <td>100% (13 siswa)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 8px;">
+                    <i class="fas fa-info-circle"></i> Data diambil dari 13 siswa yang hadir pada seluruh rangkaian
+                    pembelajaran.
+                </p>
+                <div class="media-space"
+                    style="display: flex; flex-direction: column; gap: 16px; padding: 16px; background: #f8fafc; border: none;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 16px; width: 100%;">
+                        <div
+                            style="flex: 1; min-width: 200px; background: white; border-radius: 16px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <img src="assets/rata-rata peningkatan nilai.png" alt="Grafik peningkatan nilai rata-rata"
+                                style="width: 100%; border-radius: 8px;" loading="lazy">
+                            <p style="font-size: 0.8rem; color: #6b7280; margin-top: 8px; text-align: center;">
+                                <i class="fas fa-chart-bar"></i> Grafik peningkatan rata-rata nilai dari Siklus 2 ke
+                                Siklus 3
+                            </p>
+                        </div>
+                        <div
+                            style="flex: 1; min-width: 200px; background: white; border-radius: 16px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <img src="assets/rata-rata peningkatan ketuntasan.png" alt="Grafik peningkatan ketuntasan"
+                                style="width: 100%; border-radius: 8px;" loading="lazy">
+                            <p style="font-size: 0.8rem; color: #6b7280; margin-top: 8px; text-align: center;">
+                                <i class="fas fa-chart-bar"></i> Grafik peningkatan persentase ketuntasan dari Siklus 2
+                                ke Siklus 3
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PENILAIAN GP & DPL -->
+        <section id="penilaian" class="section">
+            <h2 class="section-title">📋 Instrumen Penilaian (GP & DPL)</h2>
+            <p>Berikut dokumentasi penilaian dari Guru Pamong (Gusti Fredy Abdillah, S.Kom.) untuk tiga siklus
+                praktik terbimbing, serta Lembar Kunjungan Dosen Pembimbing Lapangan (Dr. R. Ati Sukmawati, M.Kom.).
+            </p>
+            <div class="card-grid two-column-grid">
+                <div class="card">
+                    <h3><i class="fas fa-file-alt"></i> Penilaian GP – Siklus 1</h3>
+                    <p>Penilaian modul ajar dan praktik mengajar untuk pembelajaran tanggal 22 April 2026 (Kelas
+                        XI-6).</p>
+                    <div class="media-space" style="flex-direction: column;">
+                        <img src="assets/Tumbnail Lampiran Penilaian GP - Siklus 1_page-0001.jpg"
+                            alt="Thumbnail Penilaian GP Siklus 1"
+                            style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                        <a href="https://drive.google.com/file/d/1J33p4rZRz6p5cEu8WjCQOTDigyV1VBxq/view?usp=sharing"
+                            target="_blank" class="btn-drive">
+                            <i class="fas fa-external-link-alt"></i> Lihat Penilaian GP Siklus 1
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-chalkboard-user"></i> Penilaian GP – Siklus 2</h3>
+                    <p>Penilaian modul ajar dan praktik mengajar untuk pembelajaran tanggal 30 April 2026 (Kelas XI-7).
+                    </p>
+                    <div class="media-space" style="flex-direction: column;">
+                        <img src="assets/Tumbnail Lampiran Penilaian GP - Siklus 2_page-0001.jpg"
+                            alt="Thumbnail Penilaian GP Siklus 2"
+                            style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                        <a href="https://drive.google.com/file/d/1W7omJP6CdKZQCRvkxr0CkGEyQnakTDRU/view?usp=sharing"
+                            target="_blank" class="btn-drive">
+                            <i class="fas fa-external-link-alt"></i> Lihat Penilaian GP Siklus 2
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-rocket"></i> Penilaian GP – Siklus 3</h3>
+                    <p>Penilaian modul ajar dan praktik mengajar untuk pembelajaran tanggal 6 Mei 2026 (Kelas XI-7).</p>
+                    <div class="media-space" style="flex-direction: column;">
+                        <img src="assets/Tumbnail Lampiran Penilaian GP - Siklus 3_page-0001.jpg"
+                            alt="Thumbnail Penilaian GP Siklus 3"
+                            style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                        <a href="https://drive.google.com/file/d/18kmPu3hHvxIxCUh3ILmbmzPvvahCKzVa/view?usp=sharing"
+                            target="_blank" class="btn-drive">
+                            <i class="fas fa-external-link-alt"></i> Lihat Penilaian GP Siklus 3
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-user-graduate"></i> Lembar Kunjungan DPL</h3>
+                    <p>Lembar monitoring dan catatan dari Dosen Pembimbing Lapangan pada kunjungan tanggal 22 April
+                        2026 di kelas XI-6.</p>
+                    <div class="media-space" style="flex-direction: column;">
+                        <img src="assets/Tumbnail Lampiran Kunjungan DPL PPL Terbimbing_page-0001.jpg"
+                            alt="Thumbnail Lembar Kunjungan DPL"
+                            style="width: 100%; border-radius: 16px; margin-bottom: 12px;" loading="lazy">
+                        <a href="https://drive.google.com/file/d/1vM9azjhWRIQTuz9XtrXiPhdyH9nVffjU/view?usp=sharing"
+                            target="_blank" class="btn-drive">
+                            <i class="fas fa-external-link-alt"></i> Lihat Lembar Kunjungan DPL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARGET PROFESI & REFLEKSI -->
+        <section id="target" class="section">
+            <h2 class="section-title">🚀 Target Guru Profesional & Refleksi</h2>
+            <div class="card-grid two-column-grid">
+                <div class="card">
+                    <div class="badge-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Misi & Kompetensi</h3>
+                    <p><strong>Misi:</strong> Menciptakan pembelajaran Informatika yang humanis, kontekstual dan
+                        berbasis berpikir komputasional.</p>
+                    <p><strong>Kompetensi unggulan:</strong> pedagogi inovatif (PBL, diferensiasi), fasilitasi pemecahan
+                        masalah, literasi digital (Scratch, Landrop, Google Drive, Classroom), serta pemanfaatan
+                        teknologi dan data untuk mendukung pembelajaran yang kontekstual.</p>
+                    <div style="margin: 16px 0;">
+                        <p><strong>Prinsip Mengajar:</strong></p>
+                        <ul style="margin-left: 20px; color: #4b5563; font-size: 0.9rem; padding-left: 0;">
+                            <li style="margin-bottom: 6px;">Setiap siswa memiliki cara belajar yang berbeda →
+                                pendekatan saya fleksibel dan adaptif.</li>
+                            <li style="margin-bottom: 6px;">Kesalahan adalah bagian dari proses belajar → saya
+                                menciptakan ruang aman untuk mencoba dan belajar dari kegagalan.</li>
+                            <li style="margin-bottom: 6px;">Teknologi adalah alat, bukan tujuan → saya mengajarkan
+                                siswa memanfaatkannya secara bijak dan kritis.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">"Guru profesional tidak hanya mengajar, tetapi merancang ekosistem belajar di
+                        mana siswa berani mencoba, gagal, dan menemukan solusi sendiri."</div>
+                    <p><strong>Rencana tindak lanjut:</strong> Menyusun perangkat pembelajaran berdiferensiasi yang
+                        mengakomodasi keragaman kemampuan siswa, mengembangkan video scaffolding interaktif sebagai
+                        sumber belajar mandiri, serta mengintegrasikan kegiatan presentasi siswa secara terstruktur
+                        untuk mengasah keterampilan komunikasi dan kepercayaan diri.</p>
+                    <div class="quote" style="margin-top: 32px;">
+                        <i class="fas fa-quote-left" style="font-size: 1.8rem; opacity: 0.5; margin-right: 12px;"></i>
+                        <strong>Filosofi mengajar saya</strong> — "Menumbuhkan rasa ingin tahu. Mengajarkan cara
+                        belajar."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="badge-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3>Refleksi Akhir & Pengembangan Diri</h3>
+                    <p><strong>Kekuatan:</strong> Kemampuan analisis kebutuhan siswa berdasarkan observasi, adaptasi
+                        model PBL dengan scaffolding bertahap, dan peningkatan hasil belajar yang signifikan (7,69%
+                        → 100%).</p>
+                    <p><strong>Kelemahan yang diperbaiki:</strong> Manajemen waktu untuk diferensiasi, keterampilan
+                        presentasi siswa belum optimal. Ke depan akan menyusun modul diferensiasi konten dan proses,
+                        serta video scaffolding untuk sumber belajar mandiri siswa.</p>
+                    <p><strong>Rencana jangka panjang:</strong> Implementasi PBL berbasis proyek kolaboratif,
+                        mengembangkan media interaktif berbasis web untuk lab komputer.</p>
+
+                    <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 16px;">
+                        <div style="flex: 1; min-width: 180px;">
+                            <div class="media-space" style="margin: 0; padding: 8px;">
+                                <img src="assets/Dokumentasi_Siklus1.jpeg" alt="Dokumentasi kegiatan Siklus 1"
+                                    style="width: 100%; border-radius: 12px; height: 180px; object-fit: cover;" loading="lazy">
+                                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px; text-align: center;">
+                                    <i class="fas fa-camera"></i> Siklus 1 (22 April 2026)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style="flex: 1; min-width: 180px;">
+                            <div class="media-space" style="margin: 0; padding: 8px;">
+                                <img src="assets/Dokumentasi_Siklus2.jpeg" alt="Dokumentasi kegiatan Siklus 2"
+                                    style="width: 100%; border-radius: 12px; height: 180px; object-fit: cover;" loading="lazy">
+                                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px; text-align: center;">
+                                    <i class="fas fa-camera"></i> Siklus 2 (30 April 2026)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style="flex: 1; min-width: 180px;">
+                            <div class="media-space" style="margin: 0; padding: 8px;">
+                                <img src="assets/Dokumentasi_Siklus3.jpeg" alt="Dokumentasi kegiatan Siklus 3"
+                                    style="width: 100%; border-radius: 12px; height: 220px; object-fit: cover; object-position: bottom;" loading="lazy">
+                                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px; text-align: center;">
+                                    <i class="fas fa-camera"></i> Siklus 3 (6 Mei 2026)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><i class="far fa-copyright"></i> Muhammad Insan Kamil — E-Portfolio PPL PPG Informatika 2026 |
+                Universitas Lambung Mangkurat | SMAN 1 Alalak |
+                Email: peserta.30925@ppg.belajar.id</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
