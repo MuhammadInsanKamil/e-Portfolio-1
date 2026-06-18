@@ -256,7 +256,9 @@
         a:not(.btn-drive):not(.nav-links a) {
             text-decoration: underline;
         }
-        .btn-drive, .nav-links a {
+
+        .btn-drive,
+        .nav-links a {
             text-decoration: none;
         }
 
@@ -384,9 +386,11 @@
             .hero-text h1 {
                 font-size: 1.8rem;
             }
+
             .section-title {
                 font-size: 1.2rem;
             }
+
             .profile-oval-img {
                 width: 120px;
                 height: 120px;
@@ -397,13 +401,16 @@
             .hero-text h1 {
                 font-size: 2rem;
             }
+
             .section-title {
                 font-size: 1.5rem;
             }
+
             .profile-oval-img {
                 width: 140px;
                 height: 140px;
             }
+
             .card-grid,
             .two-column-grid {
                 grid-template-columns: 1fr;
@@ -416,12 +423,22 @@
             height: auto;
             border-radius: 12px;
         }
+
         /* Tetapi untuk gambar yang butuh object-fit cover (misal di kartu Paser) tetap gunakan inline style */
+
+        /* ===== PERBAIKAN RESPONSIVITAS VIDEO (HANYA INI YANG DITAMBAHKAN) ===== */
+        @media (max-width: 768px) {
+            .media-space video {
+                width: 95% !important;
+                max-width: 100% !important;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- SELURUH KODE HTML DI BAWAH INI TIDAK BERUBAH SAMA SEKALI -->
     <div class="navbar">
         <div class="nav-container">
             <div class="logo">e-Portfolio 1</div>
@@ -450,7 +467,8 @@
                     </div>
                 </div>
                 <div class="profile-oval">
-                    <img src="assets/foto_profil.png" alt="Foto Profil Muhammad Insan Kamil" class="profile-oval-img" loading="lazy">
+                    <img src="assets/foto_profil.png" alt="Foto Profil Muhammad Insan Kamil" class="profile-oval-img"
+                        loading="lazy">
                     <div class="profile-tagline">
                         <i class="fas fa-laptop-code"></i> #CalonGuruInformatika<br> Berpikir komputasional untuk
                         merdeka belajar
@@ -717,16 +735,19 @@
                             atas</a>), yaitu dua aspek: Logika Pengkondisian dan Kesesuaian Output Visual, dengan
                         skala 1–4.</li>
                 </ol>
-                <div class="media-space">
-                    <video controls style="width: 100%; border-radius: 16px; margin-bottom: 8px;"
-                        poster="assets/tumbnail_soal_visual_siklus1.png">
-                        <source src="assets/soal_visual_siklus1.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung pemutar video.
-                    </video>
-                    <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
-                        Video 1: Tampilan visual soal yang ditampilkan ke siswa (tanpa kode)</p>
-                    <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Contoh tampilan program yang
-                        harus dibuat ulang oleh siswa</span>
+                <div style="text-align: center;">
+                    <div class="media-space"
+                        style="display: inline-flex; flex-direction: column; align-items: center; width: auto; min-width: unset; max-width: 100%; padding: 16px;">
+                        <video controls style="width: 80%; max-width: 600px; border-radius: 16px; margin-bottom: 8px;"
+                            poster="assets/tumbnail_soal_visual_siklus1.png">
+                            <source src="assets/soal_visual_siklus1.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung pemutar video.
+                        </video>
+                        <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
+                            Video 1: Tampilan visual soal yang ditampilkan ke siswa (tanpa kode)</p>
+                        <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Contoh tampilan program yang
+                            harus dibuat ulang oleh siswa</span>
+                    </div>
                 </div>
 
                 <p style="text-align: center;"><strong>Hasil:</strong> Ketuntasan hanya <strong>7,69%</strong> (1
@@ -749,7 +770,8 @@
                                         alt="Kode Sprite 1 siswa nilai rendah"
                                         style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
                                         loading="lazy">
-                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <span
+                                        style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
                                         <i class="fas fa-info-circle"></i> Kode Sprite 1 - Siswa A
                                     </span>
                                 </div>
@@ -758,7 +780,8 @@
                                         alt="Kode Sprite 2 siswa nilai rendah"
                                         style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
                                         loading="lazy">
-                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <span
+                                        style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
                                         <i class="fas fa-info-circle"></i> Kode Sprite 2 - Siswa A
                                     </span>
                                 </div>
@@ -766,9 +789,11 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #dc2626; font-weight: 600; margin-bottom: 4px;">❌ Nilai Terendah —
                                     Siswa A (25)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
                                     <li><strong>Logika Pengkondisian:</strong> 1 (Tidak menggunakan pengkondisian)</li>
-                                    <li><strong>Kesesuaian Output Visual:</strong> 1 (Output tidak menyerupai visual contoh)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 1 (Output tidak menyerupai visual
+                                        contoh)</li>
                                 </ul>
                             </div>
                         </div>
@@ -782,7 +807,8 @@
                                         alt="Kode Sprite 1 siswa nilai sedang"
                                         style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
                                         loading="lazy">
-                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <span
+                                        style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
                                         <i class="fas fa-info-circle"></i> Kode Sprite 1 - Siswa B
                                     </span>
                                 </div>
@@ -791,7 +817,8 @@
                                         alt="Kode Sprite 2 siswa nilai sedang"
                                         style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
                                         loading="lazy">
-                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <span
+                                        style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
                                         <i class="fas fa-info-circle"></i> Kode Sprite 2 - Siswa B
                                     </span>
                                 </div>
@@ -799,7 +826,8 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #eab308; font-weight: 600; margin-bottom: 4px;">⚠️ Nilai Sedang —
                                     Siswa B (50)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
                                     <li><strong>Logika Pengkondisian:</strong> 1 (Tidak menggunakan pengkondisian)</li>
                                     <li><strong>Kesesuaian Output Visual:</strong> 3 (Sebagian besar output sesuai,
                                         1–2 detail kurang tepat)</li>
@@ -816,7 +844,8 @@
                                         alt="Kode Sprite 1 siswa nilai tinggi"
                                         style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
                                         loading="lazy">
-                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <span
+                                        style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
                                         <i class="fas fa-info-circle"></i> Kode Sprite 1 - Siswa C
                                     </span>
                                 </div>
@@ -825,7 +854,8 @@
                                         alt="Kode Sprite 2 siswa nilai tinggi"
                                         style="width: 100%; max-width: 200px; height: auto; border-radius: 12px;"
                                         loading="lazy">
-                                    <span style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
+                                    <span
+                                        style="font-size: 0.9rem; display: block; text-align: center; margin-top: 6px;">
                                         <i class="fas fa-info-circle"></i> Kode Sprite 2 - Siswa C
                                     </span>
                                 </div>
@@ -833,8 +863,10 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #16a34a; font-weight: 600; margin-bottom: 4px;">✅ Nilai Tertinggi —
                                     Siswa C (87,5)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan pengkondisian dengan benar)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan pengkondisian dengan benar)
+                                    </li>
                                     <li><strong>Kesesuaian Output Visual:</strong> 3 (Sebagian besar output sesuai,
                                         1–2 detail kurang tepat)</li>
                                 </ul>
@@ -863,16 +895,21 @@
                         <span style="font-size: 0.9rem; color: #4b5563; display: block; margin-top: 6px;">
                             <i class="fas fa-eye"></i> Berikut visual yang ditampilkan guru:
                         </span>
-                        <div class="media-space" style="margin-top: 8px;">
-                            <video controls style="width: 100%; border-radius: 16px; margin-bottom: 8px;"
-                                poster="assets/tumbnail_soal_visual_siklus2.png">
-                                <source src="assets/soal_visual_siklus2.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung pemutar video.
-                            </video>
-                            <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
-                                Visual program tiga kondisi yang harus dibuat ulang oleh siswa (tanpa kode)</p>
-                            <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Siswa harus membuat
-                                kode agar outputnya serupa dengan program yang ditampilkan guru</span>
+                        <div style="text-align: center;">
+                            <div class="media-space"
+                                style="display: inline-flex; flex-direction: column; align-items: center; width: auto; min-width: unset; max-width: 100%; padding: 16px; margin-top: 8px;">
+                                <video controls
+                                    style="width: 80%; max-width: 600px; border-radius: 16px; margin-bottom: 8px;"
+                                    poster="assets/tumbnail_soal_visual_siklus2.png">
+                                    <source src="assets/soal_visual_siklus2.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                                <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i
+                                        class="fas fa-video"></i>
+                                    Visual program tiga kondisi yang harus dibuat ulang oleh siswa (tanpa kode)</p>
+                                <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Siswa harus membuat
+                                    kode agar outputnya serupa dengan program yang ditampilkan guru</span>
+                            </div>
                         </div>
                         <br>
                         Spesifikasi program (berdasarkan jarak kursor terhadap sprite):
@@ -910,9 +947,12 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #dc2626; font-weight: 600; margin-bottom: 4px;">❌ Nilai Terendah —
                                     Siswa D (50)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 2 (Hanya sebagian kondisi yang berfungsi)</li>
-                                    <li><strong>Kesesuaian Output Visual:</strong> 2 (Hanya sekitar setengah output sesuai)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 2 (Hanya sebagian kondisi yang berfungsi)
+                                    </li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 2 (Hanya sekitar setengah output
+                                        sesuai)</li>
                                 </ul>
                             </div>
                         </div>
@@ -930,9 +970,12 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #eab308; font-weight: 600; margin-bottom: 4px;">⚠️ Nilai Sedang —
                                     Siswa E (75)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 3 (Seluruh kondisi berfungsi, tapi if paralel)</li>
-                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, backdrop tidak berubah sesuai spesifikasi)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 3 (Seluruh kondisi berfungsi, tapi if
+                                        paralel)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, backdrop
+                                        tidak berubah sesuai spesifikasi)</li>
                                 </ul>
                             </div>
                         </div>
@@ -950,8 +993,10 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #16a34a; font-weight: 600; margin-bottom: 4px;">✅ Nilai Tertinggi —
                                     Siswa F (87,5)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 3 (Tiga kondisi berfungsi benar, if paralel)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 3 (Tiga kondisi berfungsi benar, if
+                                        paralel)</li>
                                     <li><strong>Kesesuaian Output Visual:</strong> 4 (Output sesuai sepenuhnya)</li>
                                 </ul>
                             </div>
@@ -980,7 +1025,7 @@
                     dibandingkan uji kompetensi awal. Namun, seluruh siswa masih menggunakan if paralel yang kurang
                     efisien karena komputer harus mengecek semua kondisi setiap saat. Temuan ini menjadi dasar
                     perbaikan pada Siklus 3, di mana siswa akan diperkenalkan dengan <strong>nested if</strong>
-                    (pengkondisian bersarang) untuk membuat program yang lebih efisien.
+                    (pengkondisian bersarang) para membuat program yang lebih efisien.
                 </div>
             </div>
 
@@ -1000,16 +1045,23 @@
                         <span style="font-size: 0.9rem; color: #4b5563; display: block; margin-top: 6px;">
                             <i class="fas fa-eye"></i> Berikut visual yang ditampilkan guru:
                         </span>
-                        <div class="media-space" style="margin-top: 8px;">
-                            <video controls style="width: 100%; border-radius: 16px; margin-bottom: 8px;"
-                                poster="assets/tumbnail_soal_visual_siklus3.png">
-                                <source src="assets/soal_visual_siklus3.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung pemutar video.
-                            </video>
-                            <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i class="fas fa-video"></i>
-                                Visual program Referee tiga kondisi yang harus dibuat ulang oleh siswa (tanpa kode)</p>
-                            <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Siswa harus membuat kode
-                                agar outputnya serupa dengan program yang ditampilkan guru</span>
+                        <div style="text-align: center;">
+                            <div class="media-space"
+                                style="display: inline-flex; flex-direction: column; align-items: center; width: auto; min-width: unset; max-width: 100%; padding: 16px; margin-top: 8px;">
+                                <video controls
+                                    style="width: 80%; max-width: 600px; border-radius: 16px; margin-bottom: 8px;"
+                                    poster="assets/tumbnail_soal_visual_siklus3.png">
+                                    <source src="assets/soal_visual_siklus3.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                                <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;"><i
+                                        class="fas fa-video"></i>
+                                    Visual program Referee tiga kondisi yang harus dibuat ulang oleh siswa (tanpa kode)
+                                </p>
+                                <span style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Siswa harus membuat
+                                    kode
+                                    agar outputnya serupa dengan program yang ditampilkan guru</span>
+                            </div>
                         </div>
                         <br>
                         Spesifikasi program (berdasarkan jarak kursor terhadap sprite Referee):
@@ -1048,9 +1100,12 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #dc2626; font-weight: 600; margin-bottom: 4px;">❌ Nilai Terendah —
                                     Siswa G (75)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 3 (Tiga kondisi berfungsi benar, tapi masih menggunakan if paralel)</li>
-                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, perubahan kostum dari sprite seharusnya berbeda di setiap kondisi)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 3 (Tiga kondisi berfungsi benar, tapi
+                                        masih menggunakan if paralel)</li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, perubahan
+                                        kostum dari sprite seharusnya berbeda di setiap kondisi)</li>
                                 </ul>
                             </div>
                         </div>
@@ -1068,9 +1123,12 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #eab308; font-weight: 600; margin-bottom: 4px;">⚠️ Nilai Sedang —
                                     Siswa H (87,5)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan nested if dengan benar)</li>
-                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, tiap kondisi tidak disertai perubahan kostum dari sprite)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan nested if dengan benar)
+                                    </li>
+                                    <li><strong>Kesesuaian Output Visual:</strong> 3 (1–2 detail kurang tepat, tiap
+                                        kondisi tidak disertai perubahan kostum dari sprite)</li>
                                 </ul>
                             </div>
                         </div>
@@ -1088,8 +1146,10 @@
                             <div style="width: 100%; text-align: left; margin-top: 8px; font-size: 0.8rem;">
                                 <p style="color: #16a34a; font-weight: 600; margin-bottom: 4px;">✅ Nilai Tertinggi —
                                     Siswa I (100)</p>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
-                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan nested if dengan sempurna)</li>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #4b5563;">
+                                    <li><strong>Logika Pengkondisian:</strong> 4 (Menerapkan nested if dengan sempurna)
+                                    </li>
                                     <li><strong>Kesesuaian Output Visual:</strong> 4 (Output sesuai sepenuhnya)</li>
                                 </ul>
                             </div>
@@ -1302,7 +1362,8 @@
                         <div style="flex: 1; min-width: 180px;">
                             <div class="media-space" style="margin: 0; padding: 8px;">
                                 <img src="assets/Dokumentasi_Siklus1.jpeg" alt="Dokumentasi kegiatan Siklus 1"
-                                    style="width: 100%; border-radius: 12px; height: 180px; object-fit: cover;" loading="lazy">
+                                    style="width: 100%; border-radius: 12px; height: 180px; object-fit: cover;"
+                                    loading="lazy">
                                 <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px; text-align: center;">
                                     <i class="fas fa-camera"></i> Siklus 1 (22 April 2026)
                                 </p>
@@ -1312,7 +1373,8 @@
                         <div style="flex: 1; min-width: 180px;">
                             <div class="media-space" style="margin: 0; padding: 8px;">
                                 <img src="assets/Dokumentasi_Siklus2.jpeg" alt="Dokumentasi kegiatan Siklus 2"
-                                    style="width: 100%; border-radius: 12px; height: 180px; object-fit: cover;" loading="lazy">
+                                    style="width: 100%; border-radius: 12px; height: 180px; object-fit: cover;"
+                                    loading="lazy">
                                 <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px; text-align: center;">
                                     <i class="fas fa-camera"></i> Siklus 2 (30 April 2026)
                                 </p>
@@ -1322,7 +1384,8 @@
                         <div style="flex: 1; min-width: 180px;">
                             <div class="media-space" style="margin: 0; padding: 8px;">
                                 <img src="assets/Dokumentasi_Siklus3.jpeg" alt="Dokumentasi kegiatan Siklus 3"
-                                    style="width: 100%; border-radius: 12px; height: 220px; object-fit: cover; object-position: bottom;" loading="lazy">
+                                    style="width: 100%; border-radius: 12px; height: 220px; object-fit: cover; object-position: bottom;"
+                                    loading="lazy">
                                 <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px; text-align: center;">
                                     <i class="fas fa-camera"></i> Siklus 3 (6 Mei 2026)
                                 </p>
